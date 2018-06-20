@@ -1,0 +1,42 @@
+{
+  "name": "08-09-http-routing-rest",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png)     # Lab 08: Vanilla REST API w/ Routing and In Memory Persistence",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev-start": "nodemon index.js",
+    "lint": "eslint **/.js",
+    "testWatch": "jest --coverage --watchAll",
+    "test": "eslint . && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LizabethPetersen/08-09-http-routing-rest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LizabethPetersen/08-09-http-routing-rest/issues"
+  },
+  "homepage": "https://github.com/LizabethPetersen/08-09-http-routing-rest#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "i": "^0.3.6",
+    "jest": "^23.1.0",
+    "nodemon": "^1.17.5",
+    "npm": "^6.1.0",
+    "superagent": "^3.8.3",
+    "winston": "^3.0.0"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.3"
+  }
+}
