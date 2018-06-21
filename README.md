@@ -1,4 +1,5 @@
-![cf](https://i.imgur.com/7v5ASc8.png)    
+[![Build Status](https://travis-ci.org/LizabethPetersen/08-09-http-routing-rest.svg?branch=master)](https://travis-ci.org/LizabethPetersen/08-09-http-routing-rest)
+
 # Lab 08: Vanilla REST API w/ Routing and In Memory Persistence
 
 ## Submission Instructions
