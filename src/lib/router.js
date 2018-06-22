@@ -2,7 +2,7 @@
 
 const logger = require('./logger');
 const bodyParser = require('./body-parser');
-const customResponse = require('./custom-response');
+const customResponse = require('./response');
 
 module.exports = class Router {
   constructor() {

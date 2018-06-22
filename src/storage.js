@@ -25,3 +25,7 @@ storage.get = (schema, _id) => {
   }
   return Promise.reject(new Error(`${_id} not found`));
 };
+
+// storage.put = (schema, _id) => {
+// if
+// }
