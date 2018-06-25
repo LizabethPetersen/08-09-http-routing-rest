@@ -6,7 +6,7 @@ const storage = require('../storage');
 module.exports = class Moto {
   constructor(config) {
     this._id = uuid();
-    this.createdOn = new Date().toISOString;
+    this.createdOn = new Date().toISOString();
     this.user = config.user;
     this.make = config.make;
     this.model = config.model;
