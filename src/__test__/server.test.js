@@ -13,8 +13,8 @@ const Moto = require('../model/build-moto');
 const apiUrl = 'http://localhost:5000/api/vi/motorcycles';
 
 const mockMoto = {
-  user: 'test.user',
-  model: 'test.model',
+  user: 'test user',
+  make: 'test make',
 };
 
 beforeAll(() => server.start(5000));
@@ -26,7 +26,7 @@ describe('POST to /api/v1/motorcycles', () => {
       .send(mockMoto)
       .then((response) => {
         expect(response.body.user).toEqual(mockMoto.user);
-        expect(response.body.model).toEqual(mockMoto.model);
+        expect(response.body.make).toEqual(mockMoto.make);
         expect(response.body._id).toBeTruthy();
         expect(response.status).toEqual(200);
       })
@@ -53,8 +53,8 @@ describe('GET /api/v1/motorcycles', () => {
   beforeEach(() => {
     const newMoto = new Moto(mockMoto);
     newMoto.save()
-      .then((moto1) => {
-        mockResourceForGet = moto1;
+      .then((moto) => {
+        mockResourceForGet = moto;
       })
       .catch((err) => {
         throw err;
@@ -66,7 +66,7 @@ describe('GET /api/v1/motorcycles', () => {
       .then((response) => {
         expect(response.status).toEqual(200);
         expect(response.body.user).toEqual(mockResourceForGet.user);
-        expect(response.body.model).toEqual(mockResourceForGet.model);
+        expect(response.body.make).toEqual(mockResourceForGet.make);
         expect(response.body.createdOn).toEqual(mockResourceForGet.createdOn);
       })
       .catch((err) => {

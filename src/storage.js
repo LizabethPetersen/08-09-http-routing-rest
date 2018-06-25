@@ -9,7 +9,7 @@ const memory = {};
 storage.save = (schema, item) => {
   return new Promise((resolve, reject) => {
     if (!schema) return reject(new Error('Cannot create a new item, schema required.'));
-    if (!item || !item.user) return reject(new Error('Cannot create a new item. Item or username required.'));
+    if (!item || !item.user) return reject(new Error('Cannot create a new item. User or make required.'));
 
     if (!memory[schema]) memory[schema] = {};
     memory[schema][item._id] = item;

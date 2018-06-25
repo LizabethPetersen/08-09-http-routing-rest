@@ -16,6 +16,7 @@ module.exports = (request) => {
     let message = '';
         
     request.on('data', (data) => {
+      console.log(data);  // eslint-disable-line
       message += data.toString();
     });
 
