@@ -8,6 +8,7 @@
     "dev-start": "nodemon index.js",
     "lint": "eslint **/.js",
     "testWatch": "jest --coverage --watchAll",
+    "test-nolint": "jest --coverage --detectOpenHandles --forceExit --runInBand",
     "test": "eslint . && jest --coverage"
   },
   "repository": {
