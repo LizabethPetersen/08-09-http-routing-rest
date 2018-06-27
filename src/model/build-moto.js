@@ -1,7 +1,7 @@
 'use strict';
 
 const uuid = require('uuid/v4');
-const storage = require('../storage');
+const storage = require('../lib/storage/memory');
 
 module.exports = class Moto {
   constructor(config) {
@@ -16,10 +16,9 @@ module.exports = class Moto {
   save() {
     return storage.save('Moto', this);
   }
-  // static fetchAll() {
-  // return storage.get();
-  // }
-  
+  static fetchAll() {
+    return storage.get();
+  }
   static findOne(_id) {
     return storage.get('Moto', _id);
   }
