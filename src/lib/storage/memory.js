@@ -1,6 +1,6 @@
 'use strict';
 
-const logger = require('./lib/logger');
+const logger = require('../logger');
 
 const storage = module.exports = {};
 
@@ -25,7 +25,3 @@ storage.get = (schema, _id) => {
   }
   return Promise.reject(new Error(`${_id} not found`));
 };
-
-// storage.put = (schema, _id) => {
-// if
-// }

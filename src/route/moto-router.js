@@ -9,8 +9,8 @@ module.exports = (router) => {
     logger.log(logger.INFO, 'ROUTE-NOTE: POST /api/v1/motorcycles');
     const newMoto = new Moto(request.body);
     newMoto.save()
-      .then((motoBuilt) => {
-        customResponse.sendJSON(response, 200, motoBuilt);
+      .then((moto) => {
+        customResponse.sendJSON(response, 200, moto);
         return undefined;
       })
       .catch((err) => {
@@ -26,13 +26,28 @@ module.exports = (router) => {
       return undefined;
     }
     Moto.findOne(request.url.query.id)
-      .then((moto1) => {
-        customResponse.sendJSON(response, 200, moto1);
+      .then((moto) => {
+        customResponse.sendJSON(response, 200, moto);
       })
       .catch((err) => {
-        console.log(err);  // eslint-disable-line
+        customResponse.sendError(response, 400, err.message);
+      });
+    return undefined;
+  });
+
+  router.delete('/api/v1/motorcycles', (request, response) => {
+    if (!request.url.query.id) {
+      customResponse.sendError(response, 404, 'Your request requires an ID');
+      return undefined;
+    }
+    Moto.findOneAndDelete(request.url.query.id)
+      .then((moto) => {
+        customResponse.sendJSON(response, 204, moto);
+      })
+      .catch((err) => {
         customResponse.sendError(response, 400, err.message);
       });
     return undefined;
   });
 };
+
