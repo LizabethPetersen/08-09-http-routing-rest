@@ -1,11 +1,5 @@
 'use strict';
 
-describe('testing to see if I am connected to TravisCI', () => {
-  test('should equal true', () => {
-    expect(true).toEqual(true);
-  });
-});
-
 const superagent = require('superagent');
 const server = require('../lib/server');
 const Moto = require('../model/build-moto');
@@ -47,7 +41,7 @@ describe('POST to /api/v1/motorcycles', () => {
       });
   });
 });
-// 
+
 describe('GET /api/v1/motorcycles', () => {
   let mockResourceForGet;
   beforeEach(() => {
