@@ -6,7 +6,7 @@ const customResponse = require('../lib/response');
 
 module.exports = (router) => {
   router.post('/api/v1/motorcycles', (request, response) => {
-    logger.log(logger.INFO, 'ROUTE-NOTE: POST /api/v1/motorcycles');
+    logger.log(logger.INFO, 'ROUTE: POST /api/v1/motorcycles');
     const newMoto = new Moto(request.body);
     newMoto.save()
       .then((moto) => {
@@ -14,7 +14,7 @@ module.exports = (router) => {
         return undefined;
       })
       .catch((err) => {
-        logger.log(logger.INFO, `ROUTE NOTE: There was a bad request ${JSON.stringify(err.message)}`);
+        logger.log(logger.INFO, `ROUTE: There was a bad request ${JSON.stringify(err.message)}`);
         customResponse.sendError(response, 400, err.message);
         return undefined;
       });
